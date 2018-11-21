@@ -1,16 +1,13 @@
 <?php
-namespace SapiStudio\DnsRecords;
+namespace SapiStudio\Socket;
 
 /**
- * SocketConnection
- * 
+ * Connection
  * @package 
- * @copyright 2017
- * @version $Id$
  * @access public
  */
  
-class SocketConnection
+class Connection
 {
     private $socketResource     = null;
     protected $hostname         = null;
@@ -19,7 +16,7 @@ class SocketConnection
     protected $socketPort       = null;
 
     /**
-     * SocketConnection::open()
+     * Connection::open()
      */
     public static function open($hostname, $port = null)
     {
@@ -27,14 +24,14 @@ class SocketConnection
     }
     
     /**
-     * SocketConnection::__destruct()
+     * Connection::__destruct()
      */
     public function __destruct(){
         $this->close();
     }
     
     /**
-     * SocketConnection::setHostName()
+     * Connection::setHostName()
      */
     public function setHostName($hostname)
     {
@@ -43,7 +40,7 @@ class SocketConnection
     }
     
     /**
-     * SocketConnection::setProtocol()
+     * Connection::setProtocol()
      */
     public function setProtocol($protocol)
     {
@@ -52,7 +49,7 @@ class SocketConnection
     }
 
     /**
-     * SocketConnection::getHostName()
+     * Connection::getHostName()
      */
     public function getHostName()
     {
@@ -60,7 +57,7 @@ class SocketConnection
     }
 
     /**
-     * SocketConnection::getPort()
+     * Connection::getPort()
      */
     public function getPort()
     {
@@ -68,7 +65,7 @@ class SocketConnection
     }
 
     /**
-     * SocketConnection::setSocketPort()
+     * Connection::setSocketPort()
      */
     public function setSocketPort($port)
     {
@@ -77,7 +74,7 @@ class SocketConnection
     }
 
     /**
-     * SocketConnection::getSocketStream()
+     * Connection::getSocketStream()
      */
     protected function getSocketStream()
     {
@@ -92,7 +89,7 @@ class SocketConnection
     }
 
     /**
-     * SocketConnection::connect()
+     * Connection::connect()
      */
     protected function connect()
     {
@@ -111,7 +108,7 @@ class SocketConnection
     }
 
     /**
-     * SocketConnection::sendMessage()
+     * Connection::sendMessage()
      */
     public function sendMessage($message)
     {
@@ -121,7 +118,7 @@ class SocketConnection
     }
 
     /**
-     * SocketConnection::sendMessageWithoutAnswer()
+     * Connection::sendMessageWithoutAnswer()
      */
     public function sendMessageWithoutAnswer($message)
     {
@@ -130,7 +127,7 @@ class SocketConnection
     }
 
     /**
-     * SocketConnection::receiveMessage()
+     * Connection::receiveMessage()
      */
     public function receiveMessage($length = null)
     {
@@ -147,7 +144,7 @@ class SocketConnection
     }
 
     /**
-     * SocketConnection::close()
+     * Connection::close()
      */
     public function close()
     {
